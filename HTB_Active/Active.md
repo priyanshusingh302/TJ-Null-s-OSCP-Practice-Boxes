@@ -45,7 +45,7 @@ Nmap done: 1 IP address (1 host up) scanned in 79.08 seconds
 ```bash
 smbclient -L 10.10.10.100
 ```
-![](/images/2.png) 
+![](HTB_Active/images/2.png)
 
   
 ## STEP_3 ==> Connect to the Replication
@@ -56,14 +56,14 @@ smbclient //10.10.10.100/Replication
 
 We find that Groups.xml contains an encrypted password of username SVC_TGS.
 
-![](/images/3.png) 
+![](HTB_Active/images/3.png) 
 
 
 ## STEP_4 ==> Cracking the encryption
 
 The private key was released by Microsoft so it can be decrypted from the built in kali tool `/usr/bin/gpp-decrypt`
 
-![](/images/pass_crack.png)
+![](HTB_Active/images/pass_crack.png)
 
 ```Password-GPPstillStandingStrong2k18```
 
@@ -75,7 +75,7 @@ From above credential we login as user - SVC_TGS
 smbclient //10.10.10.100/Users -U SVC_TGS
 ```
 
-![](/images/user.png)
+![](HTB_Active/images/user.png)
 
 
 ## STEP_6 ==> Privilege Escalation
@@ -84,12 +84,12 @@ In nmap scanning result we saw port 88 was open for Kerberos therfore some SPN i
 
 >https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetUserSPNs.py
 
-![](/images/5.png)
+![](HTB_Active/images/5.png)
 
 
 ## STEP_7 ==> Cracking the hash
 
-![](/images/6.png)
+![](HTB_Active/images/6.png)
 ```Password-Ticketmaster1968```
 
 ## STEP_8 ==> Login as administrator
@@ -98,13 +98,13 @@ In nmap scanning result we saw port 88 was open for Kerberos therfore some SPN i
 smbclient //10.10.10.100/C$ -U active.htb\\administrator
 ```
 
-![](/images/7.png)
+![](HTB_Active/images/7.png)
 
 
 ## STEP_9 ==> root.txt
 
 ` /Users/Administrator/Desktop`
   
-![](/images/8.png)
+![](HTB_Active/images/8.png)
 
-![](/images/root.png)
+![](HTB_Active/images/root.png)
