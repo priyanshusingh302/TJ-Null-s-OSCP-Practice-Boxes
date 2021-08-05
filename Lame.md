@@ -10,7 +10,7 @@ prompt: https://app.hackthebox.eu/machine/Lame
 
 ## STEP_1 ==> NMAP Scan
 
-```bash
+```
 └─$ nmap -Pn -T5 -A 10.10.10.3
 Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times will be slower.
 Starting Nmap 7.91 ( https://nmap.org ) at 2021-08-06 00:31 IST
