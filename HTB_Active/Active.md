@@ -10,7 +10,7 @@ prompt: https://app.hackthebox.eu/machine/Active
 
 ## STEP_1 ==> NMAP Scan
 
-```bash
+```
 └─$ nmap -sV 10.10.10.100 
 Starting Nmap 7.91 ( https://nmap.org ) at 2021-08-02 14:41 IST
 Nmap scan report for 10.10.10.100
